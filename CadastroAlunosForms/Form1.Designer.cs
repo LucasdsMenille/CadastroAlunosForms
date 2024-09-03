@@ -42,8 +42,8 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnTodos = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +87,7 @@
             this.btnIncluir.TabIndex = 4;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // btnRemover
             // 
@@ -96,22 +97,27 @@
             this.btnRemover.TabIndex = 5;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // dgvAlunos
             // 
+            this.dgvAlunos.AllowUserToAddRows = false;
+            this.dgvAlunos.AllowUserToDeleteRows = false;
+            this.dgvAlunos.AllowUserToOrderColumns = true;
             this.dgvAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlunos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dgvAlunos.Location = new System.Drawing.Point(49, 199);
+            this.Nome,
+            this.Curso});
+            this.dgvAlunos.Location = new System.Drawing.Point(48, 203);
             this.dgvAlunos.Name = "dgvAlunos";
-            this.dgvAlunos.Size = new System.Drawing.Size(397, 119);
+            this.dgvAlunos.ReadOnly = true;
+            this.dgvAlunos.Size = new System.Drawing.Size(390, 119);
             this.dgvAlunos.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 352);
+            this.label4.Location = new System.Drawing.Point(54, 352);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 8;
@@ -119,14 +125,14 @@
             // 
             // txtAlteracao
             // 
-            this.txtAlteracao.Location = new System.Drawing.Point(166, 345);
+            this.txtAlteracao.Location = new System.Drawing.Point(134, 345);
             this.txtAlteracao.Name = "txtAlteracao";
             this.txtAlteracao.Size = new System.Drawing.Size(195, 20);
             this.txtAlteracao.TabIndex = 7;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(382, 344);
+            this.btnAlterar.Location = new System.Drawing.Point(358, 344);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(51, 28);
             this.btnAlterar.TabIndex = 9;
@@ -136,7 +142,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 391);
+            this.label5.Location = new System.Drawing.Point(54, 397);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 10;
@@ -147,7 +153,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblTotal.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTotal.Location = new System.Drawing.Point(194, 391);
+            this.lblTotal.Location = new System.Drawing.Point(164, 397);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(13, 13);
             this.lblTotal.TabIndex = 11;
@@ -155,7 +161,7 @@
             // 
             // btnTodos
             // 
-            this.btnTodos.Location = new System.Drawing.Point(245, 383);
+            this.btnTodos.Location = new System.Drawing.Point(209, 383);
             this.btnTodos.Name = "btnTodos";
             this.btnTodos.Size = new System.Drawing.Size(60, 41);
             this.btnTodos.TabIndex = 12;
@@ -164,22 +170,24 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(341, 383);
+            this.btnFechar.Location = new System.Drawing.Point(311, 383);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(68, 41);
             this.btnFechar.TabIndex = 13;
             this.btnFechar.Text = "Fechar Sistema";
             this.btnFechar.UseVisualStyleBackColor = true;
             // 
-            // Column1
+            // Nome
             // 
-            this.Column1.HeaderText = "Nome";
-            this.Column1.Name = "Column1";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             // 
-            // Column2
+            // Curso
             // 
-            this.Column2.HeaderText = "Curso";
-            this.Column2.Name = "Column2";
+            this.Curso.HeaderText = "Curso";
+            this.Curso.Name = "Curso";
+            this.Curso.ReadOnly = true;
             // 
             // Form1
             // 
@@ -222,11 +230,11 @@
         private System.Windows.Forms.TextBox txtAlteracao;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnTodos;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
     }
 }
 
