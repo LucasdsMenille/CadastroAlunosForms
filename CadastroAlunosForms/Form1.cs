@@ -64,7 +64,40 @@ namespace CadastroAlunosForms
 
         private void dgvAlunos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verifica a existeência de linhjas
-        }aaa
+            // Verifica a existeência de linhas no Grid
+            if(dgvAlunos.RowCount > 0)
+            {
+                // Move o conteúdo da primeira célula da linha selecionada pra a caixa de texto
+                txtAlteracao.Text = dgvAlunos.CurrentRow.Cells[0].Value.ToString();
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (txtAlteracao.Text !="")
+            {
+                //Move o novo valor da caixa de texto ALteração para célula selecionada
+                dgvAlunos.CurrentRow.Cells[0].Value = txtAlteracao.Text;
+
+                //Exibe a mensagem de alteração com sucesso
+                MessageBox.Show("Aluno alterado com sucesso", "Alteração",
+               MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+        }
+
+        private void btnTodos_Click(object sender, EventArgs e)
+        {
+            //Zera as linhas do grid, removendo as existentes
+            dgvAlunos.RowCount= 0;
+            //Exibe na label o contdor de linhas do GridView após ser zerado
+            lblTotal.Text = dgvAlunos.RowCount.ToString();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            //Finaliza a aplicasção
+            Application.Exit();
+        }
     }
 }
