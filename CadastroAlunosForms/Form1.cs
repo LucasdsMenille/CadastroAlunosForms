@@ -61,5 +61,10 @@ namespace CadastroAlunosForms
             }
 
         }
+
+        private void dgvAlunos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica a existeência de linhjas
+        }aaa
     }
 }

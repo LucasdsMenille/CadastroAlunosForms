@@ -113,6 +113,7 @@
             this.dgvAlunos.ReadOnly = true;
             this.dgvAlunos.Size = new System.Drawing.Size(390, 119);
             this.dgvAlunos.TabIndex = 6;
+            this.dgvAlunos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlunos_CellClick);
             // 
             // label4
             // 
